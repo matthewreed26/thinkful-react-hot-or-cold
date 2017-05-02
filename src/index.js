@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import HotOrCold from './components/hot-or-cold';
 import './index.css';
 
 ReactDOM.render(
-  <App />,
+  <HotOrCold />,
   document.getElementById('root')
 );

@@ -17,7 +17,7 @@ export default class HotOrCold extends React.Component{
 		};
 	}
 	gameLogic(newGuessVal){
-		let newGuessValue = parseInt(newGuessVal);
+		let newGuessValue = parseInt(newGuessVal,10);
 		if(newGuessValue === this.state.answer){
 			this.setWon(true);
 		}else{

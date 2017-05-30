@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import GuessTemp from './guess-temp';
 import Guess from './guess';
 import GuessesList from './guesses-list';
-import {setWon, setLastTemp, setGuesses, setInputGuessVal} from '../actions';
+import {setWon, setAnswer, setLastTemp, setGuesses, setInputGuessVal} from '../actions';
 
 export class HotOrCold extends React.Component{
 	gameLogic(newGuessVal){
@@ -28,6 +28,9 @@ export class HotOrCold extends React.Component{
 		this.props.dispatch(setLastTemp(temp));
 		return temp;
 	}
+	setAnswer(answer){
+		this.props.dispatch(setAnswer(answer));
+	}
 
 	render(){
 		let returnVal = (
@@ -45,6 +48,15 @@ export class HotOrCold extends React.Component{
 		return returnVal;
 	}
 }
+
+HotOrCold.defaultProps = {
+  won:false,
+  answer:Math.round(Math.random()*100),
+  lastTemp:null,
+  inputGuessVal:'',
+  //will be a list of obj {'value':guessValue, 'temp':guessTemp}
+  guesses:[]
+};
 
 export const mapStateToProps = state => ({
   won:state.won,

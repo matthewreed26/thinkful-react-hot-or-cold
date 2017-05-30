@@ -5,6 +5,13 @@ export const setWon = won => ({
 });
 
 
+export const SET_ANSWER = 'SET_ANSWER';
+export const setAnswer = answer => ({
+    type: SET_ANSWER,
+    answer
+});
+
+
 export const SET_LAST_TEMP = 'SET_LAST_TEMP';
 export const setLastTemp = lastTemp => ({
     type: SET_LAST_TEMP,

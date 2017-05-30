@@ -1,4 +1,5 @@
-import {SET_WON, SET_LAST_TEMP, SET_GUESSES, SET_INPUT_GUESS_VAL} from '../actions';
+import {SET_WON, SET_ANSWER, SET_LAST_TEMP,
+  SET_GUESSES, SET_INPUT_GUESS_VAL} from '../actions';
 
 const initialState = {
   won:false,
@@ -13,6 +14,11 @@ export const hotOrColdReducer = (state=initialState, action) => {
     if (action.type === SET_WON) {
         return Object.assign({}, state, {
             won: action.won
+        });
+    }
+    else if (action.type === SET_ANSWER) {
+        return Object.assign({}, state, {
+            answer: action.answer
         });
     }
     else if (action.type === SET_LAST_TEMP) {
